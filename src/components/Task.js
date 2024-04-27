@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Task() {
+function Task({ index ,text, category , buttonDelete }) {
+
   return (
     <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
-      <button className="delete">X</button>
+      <div  className="label" name="category" value={category}>{category}</div>
+      <div  className="text" name="task" value={text}>{text}</div>
+      <button className="delete" onClick={(e) => buttonDelete(index)}>X</button>
     </div>
   );
 }
